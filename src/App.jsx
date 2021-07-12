@@ -17,7 +17,7 @@ const App = () => {
             <Films />
           </Route>
           <Route exact path='/People'>
-            <People></People>
+            <People />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -18,14 +18,15 @@ export default class People extends Component {
             <React.Fragment>
                 <h1>People</h1>
                 <ol>
-                    {this.state.people.sort((a, b) => {
-                        console.log([a,b])
-                        let x = a.name.toUpperCase();
-                        let y = b.name.toUpperCase();
-                        if(x < y) return -1
-                        if(x > y) return 1
-                        return 0
-                    }).map(person => <li key={person.id}>{person.name}</li>)}
+                    {
+                        this.state.people.sort((a, b) => {
+                            a = a.name.toUpperCase();
+                            b = b.name.toUpperCase();
+                            if(a < b) return -1
+                            if(a > b) return 1
+                            return 0
+                        }).map(person => <li key={person.id}>{person.name}</li>)
+                    }
                 </ol>
             </React.Fragment>
         )
