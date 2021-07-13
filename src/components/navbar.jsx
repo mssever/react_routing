@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom';
+import routes from '../data/routes'
 
 
 export default function Navbar(props) {
     return (
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/films">Films</Link></li>
-                <li><Link to="/people">People</Link></li>
+                {
+                    routes.map(route => {
+                        if(route.inNav) {
+                            return (
+                                <li key={route.path}>
+                                    <Link to={route.path}>{route.name}</Link>
+                                </li>
+                            )
+                        } else { return null }
+                    })
+                }
             </ul>
     )
 }
