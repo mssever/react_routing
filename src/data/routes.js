@@ -2,6 +2,7 @@ import Films from '../components/films'
 import People from '../components/people'
 import Vehicles from '../components/vehicles'
 import IndivVehicle from '../components/individual/vehicle'
+import IndivPerson from '../components/individual/person'
 
 class Route {
   constructor(func, path, name, inNav=true) {
@@ -17,7 +18,8 @@ const routes = [
   new Route(Films, '/films', 'Films'),
   new Route(People, '/people', 'People'),
   new Route(Vehicles, '/vehicles', 'Vehicles'),
-  new Route(IndivVehicle, '/vehicles/:id', null, false)
+  new Route(IndivVehicle, '/vehicles/:id', null, false),
+  new Route(IndivPerson, '/people/:id', null, false)
 ]
 
 export default routes

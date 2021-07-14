@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import {Link} from 'react-router-dom'
 
 export default class People extends Component {
     constructor() {
@@ -25,7 +26,7 @@ export default class People extends Component {
                             if(a < b) return -1
                             if(a > b) return 1
                             return 0
-                        }).map(person => <li key={person.id}>{person.name}</li>)
+                        }).map(person => <li key={person.id}><Link to={`/people/${person.id}`}>{person.name}</Link></li>)
                     }
                 </ol>
             </React.Fragment>
